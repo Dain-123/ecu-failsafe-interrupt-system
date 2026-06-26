@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Dainty Teresa Davis",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 10.2, "left": -163.8, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 37.1, "left": 191.8, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": 261.9,
+      "left": -86.5,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": -62.8, "left": -44.9, "attrs": {} }
+  ],
+  "connections": [
+    [ "sw1:2", "uno:2", "green", [ "h105.7", "v48" ] ],
+    [ "sw1:1", "uno:GND.1", "green", [ "h-19.2", "v38.4", "h9.3" ] ],
+    [ "ntc1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "ntc1:GND", "uno:GND.1", "black", [ "v-182.4", "h18.9" ] ],
+    [ "ntc1:OUT", "uno:A1", "green", [ "h67.1", "v-28.7" ] ],
+    [ "pot1:GND", "uno:GND.1", "black", [ "h-28.8", "v-9.6", "h-221.1" ] ],
+    [ "uno:A0", "pot1:SIG", "green", [ "v0" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v115.2", "h-244.6" ] ]
+  ],
+  "dependencies": {}
+}
